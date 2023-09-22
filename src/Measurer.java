@@ -15,6 +15,11 @@ public class Measurer extends AbstractMeasurer
         System.out.println(MessageFormat.format("Measurer \"{0}\" successfully created.", this.name));
     }
 
+    public Measurer()
+    {
+        setValues();
+    }
+
     @Override // Віртуальний метод
     public void measure()
     {
@@ -22,11 +27,7 @@ public class Measurer extends AbstractMeasurer
         System.out.println(MessageFormat.format("Measurer \"{0}\" has {1} {2} shown on it.", this.name, units, this.unit));
     }
 
-    public Measurer()
-    {
-        setValues();
-    }
-
+    @Override
     protected void setValues()
     {
         Scanner scanner = new Scanner(System.in);
@@ -37,7 +38,7 @@ public class Measurer extends AbstractMeasurer
         System.out.print("Upper limit: "); this.upperLimit = scanner.nextLine();
         System.out.print("Inaccuracy: "); this.inaccuracy = Double.parseDouble(scanner.nextLine());
         System.out.print("Status: "); this.status = scanner.nextLine();
-        System.out.println(MessageFormat.format("Object \"{0}\" successfully created.", this.name));
+        System.out.println(MessageFormat.format("Measurer \"{0}\" successfully created.", this.name));
     }
 
     public void getListing()

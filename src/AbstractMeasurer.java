@@ -8,5 +8,7 @@ public abstract class AbstractMeasurer
 
     public abstract void measure();
 
+    protected abstract void setValues();
+
 
 }

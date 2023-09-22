@@ -11,7 +11,8 @@ public class Main
 //        gas2.setStatus("Broken");
 //        System.out.println(); gas2.getListing();
 
-        Thermometer thermo1 = new Thermometer("Thermo1", "°C", "34", "42",
+
+        Thermometer thermo1 = new Thermometer("Thermo1", "", "34", "43",
                                             0.1, "Off", 18, 1.7, 0.8);
         thermo1.getListing();
 
@@ -19,6 +20,12 @@ public class Main
 
         thermo1.measure(); thermo2.measure();
         Thermometer.calibrate();
+        Thermometer.switchThermalUnit();
+        thermo1.getListing();
+        thermo2.getListing();
+        Thermometer.switchThermalUnit();
+        thermo1.getListing();
+        thermo2.getListing();
     }
 
 
