@@ -118,19 +118,41 @@ public class Thermometer extends Measurer
         }
     }
 
-    public void setLength()
+    // Getters and Setters
+    public void setLength(double length)
     {
-
+        System.out.println(MessageFormat.format("Length of \"{0}\" was changed from \"{1}\" to \"{2}\".",
+                this.name, this.length, length));
+        this.length = length;
     }
 
-    public void setWidth()
+    public double getLength()
     {
-
+        return this.length;
     }
 
-    public void setHeight()
+    public void setWidth(double width)
     {
+        System.out.println(MessageFormat.format("Width of \"{0}\" was changed from \"{1}\" to \"{2}\".",
+                this.width, this.width, width));
+        this.width = width;
+    }
 
+    public double getWidth()
+    {
+        return this.width;
+    }
+
+    public void setHeight(double height)
+    {
+        System.out.println(MessageFormat.format("Height of \"{0}\" was changed from \"{1}\" to \"{2}\".",
+                this.height, this.height, height));
+        this.height = height;
+    }
+
+    public double getHeight()
+    {
+        return this.height;
     }
 
 }
