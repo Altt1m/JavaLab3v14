@@ -4,7 +4,7 @@ import java.text.MessageFormat;
 public class Measurer extends AbstractMeasurer
 {
     public Measurer(String name, String unit, String lowerLimit,
-                    String upperLimit, double inaccuracy, String status)
+                            String upperLimit, double inaccuracy, String status)
     {
         this.name = name;
         this.unit = unit;
@@ -15,7 +15,7 @@ public class Measurer extends AbstractMeasurer
         System.out.println(MessageFormat.format("Measurer \"{0}\" successfully created.", this.name));
     }
 
-    @Override
+    @Override // Віртуальний метод
     public void measure()
     {
         double units = new Random().nextDouble(Double.parseDouble(lowerLimit), Double.parseDouble(upperLimit));
@@ -27,7 +27,7 @@ public class Measurer extends AbstractMeasurer
         setValues();
     }
 
-    private void setValues()
+    protected void setValues()
     {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nType measurer's fields, please.");

@@ -1,6 +1,6 @@
 public class Main
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws InterruptedException
     {
 //        // Створити кілька об'єктів класу. Запрограмувати роботу з об'єктами з застосування усіх методів класу.
 //        Measurer gas1 = new Measurer("Gas1", "m3", "0.000",
@@ -11,7 +11,16 @@ public class Main
 //        gas2.setStatus("Broken");
 //        System.out.println(); gas2.getListing();
 
-        Measurer m1 = new Measurer();
-        m1.measure();
+        Thermometer thermo1 = new Thermometer("Thermo1", "°C", "34", "42",
+                                            0.1, "Off", 18, 1.7, 0.8);
+        thermo1.getListing();
+
+        Thermometer thermo2 = new Thermometer();
+
+        thermo1.measure(); thermo2.measure();
+        Thermometer.calibrate();
     }
+
+
+
 }

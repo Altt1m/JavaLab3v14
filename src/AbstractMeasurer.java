@@ -7,4 +7,6 @@ public abstract class AbstractMeasurer
     protected String status;
 
     public abstract void measure();
+
+
 }
