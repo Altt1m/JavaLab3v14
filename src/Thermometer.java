@@ -60,7 +60,8 @@ public class Thermometer extends Measurer
         System.out.println("Height: " + height + " cm");
     }
 
-    public static void calibrate() throws InterruptedException {
+    public static void calibrate() throws InterruptedException
+    {
         Scanner scan = new Scanner(System.in);
         System.out.print("\nStart calibration? y/n "); String answer = scan.nextLine();
         if (answer.equals("y"))
@@ -79,6 +80,13 @@ public class Thermometer extends Measurer
                     e.printStackTrace();
                 }
 
+            }
+            for (int i = 0; i < objects.size(); i++)
+            {
+                double tempLower = Double.parseDouble(objects.get(i).lowerLimit);
+                double tempUpper = Double.parseDouble(objects.get(i).upperLimit);
+                objects.get(i).lowerLimit = Double.toString(Math.floor(tempLower));
+                objects.get(i).upperLimit = Double.toString(Math.floor(tempUpper));
             }
             System.out.println("Success!");
         }
