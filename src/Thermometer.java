@@ -11,10 +11,7 @@ public class Thermometer extends Measurer
     private static String thermalUnit = "°C";
     private static ArrayList<Thermometer> objects = new ArrayList<>();
 
-    public Thermometer()
-    {
-
-    }
+    public Thermometer() { }
 
     public Thermometer(String name, String unit, String lowerLimit, String upperLimit,
                        double inaccuracy, String status, double length, double width, double height)

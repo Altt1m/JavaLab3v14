@@ -41,6 +41,7 @@ public class Measurer extends AbstractMeasurer
         System.out.println(MessageFormat.format("Measurer \"{0}\" successfully created.", this.name));
     }
 
+    @Override
     public void getListing()
     {
         System.out.println("Name: " + name);
