@@ -51,13 +51,13 @@ public class Thermometer extends Measurer
     {
         System.out.println("\nName: " + name);
         System.out.println("Thermal unit: " + thermalUnit);
-        System.out.println("Lower limit: " + lowerLimit);
-        System.out.println("Upper limit: " + upperLimit);
-        System.out.println("Inaccuracy: " + inaccuracy);
+        System.out.println("Lower limit: " + String.format("%.1f", Double.parseDouble(lowerLimit)) + thermalUnit);
+        System.out.println("Upper limit: " + String.format("%.1f", Double.parseDouble(upperLimit)) + thermalUnit);
+        System.out.println("Inaccuracy: " + inaccuracy + "%");
         System.out.println("Status: " + status);
-        System.out.println("Length: " + length);
-        System.out.println("Width: " + width);
-        System.out.println("Height: " + height);
+        System.out.println("Length: " + length + " cm");
+        System.out.println("Width: " + width + " cm");
+        System.out.println("Height: " + height + " cm");
     }
 
     public static void calibrate() throws InterruptedException {
@@ -88,8 +88,9 @@ public class Thermometer extends Measurer
     @Override
     public void measure()
     {
-        int units = new Random().nextInt(Integer.parseInt(lowerLimit), Integer.parseInt(upperLimit));
-        System.out.println(MessageFormat.format("\nThermometer \"{0}\" has {1} {2} shown on it.", this.name, units, thermalUnit));
+        double units = new Random().nextDouble(Double.parseDouble(lowerLimit), Double.parseDouble(upperLimit));
+        System.out.println(MessageFormat.format("\nThermometer \"{0}\" has {1} {2} shown on it.", this.name,
+                                                                        String.format("%.1f", units), thermalUnit));
     }
 
     public static void switchThermalUnit()
@@ -116,6 +117,7 @@ public class Thermometer extends Measurer
                 objects.get(i).upperLimit = Double.toString((tempUpper - 32) / 1.8);
             }
         }
+        System.out.println("\nThermal unit was switched to " + thermalUnit + ".");
     }
 
     // Getters and Setters

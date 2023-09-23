@@ -23,6 +23,7 @@ public class Main
         Thermometer.switchThermalUnit();
         thermo1.getListing();
         thermo2.getListing();
+        thermo1.measure(); thermo2.measure();
         Thermometer.switchThermalUnit();
         thermo1.getListing();
         thermo2.getListing();

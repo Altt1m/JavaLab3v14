@@ -45,9 +45,9 @@ public class Measurer extends AbstractMeasurer
     {
         System.out.println("Name: " + name);
         System.out.println("Measuring unit: " + unit);
-        System.out.println("Lower limit: " + lowerLimit);
-        System.out.println("Upper limit: " + upperLimit);
-        System.out.println("Inaccuracy: " + inaccuracy);
+        System.out.println("Lower limit: " + lowerLimit + unit);
+        System.out.println("Upper limit: " + upperLimit + unit);
+        System.out.println("Inaccuracy: " + inaccuracy + "%");
         System.out.println("Status: " + status);
     }
 
